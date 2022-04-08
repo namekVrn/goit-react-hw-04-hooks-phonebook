@@ -1,4 +1,4 @@
-import react, {Component} from 'react'
+import react from 'react'
 import css from '../ContactsList/ContactsList.module.css'
 console.log(react)
 const Contacts=({onDeleteTel,contact})=>{
