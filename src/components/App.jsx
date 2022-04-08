@@ -30,7 +30,7 @@ const App = ()=>{
       comment: data.comment
     };
 
-    if (contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
+    if (contacts.find(contact => contact.tel.toLowerCase() === data.tel.toLowerCase())) {
       alert(`${data.name} is already in contacts`);
       return;
     };
@@ -40,13 +40,14 @@ const App = ()=>{
   };
 
   const changeFilter = event => {
-    setFilter(event.currentTarget.value);    
+    console.log(event)
+    setFilter(event);    
    };
 
   
-  const normalizedFilter = filter.toLocaleLowerCase();
+  
   const filtredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalizedFilter),
+    contact.tel.toLowerCase().includes(filter),
   );
  
     return(
@@ -61,7 +62,7 @@ const App = ()=>{
 
           <h2 className={css.titleTel}>Узнай кто звонил ? <br/>Если спам, добавь в базу номер!</h2>
           <Form onDataForm={formSubmitHandler} />
-          {/* <Filter value={filter} upDataFilterState={this.upDataFilter}/> */}
+          <Filter value={filter} upDataFilterState={changeFilter}/>
           <ContactsList onDeleteTel={deleteContact} contact={filtredContacts}/>
         
         </div>

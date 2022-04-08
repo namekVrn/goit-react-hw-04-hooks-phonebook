@@ -34,8 +34,6 @@ const Form =({onDataForm})=>{
        setTel('')
        setComment('')
     }
-    
-  
         return(
             <form onSubmit={formSubmit} className={css.form}type='submit'>
                 <input
