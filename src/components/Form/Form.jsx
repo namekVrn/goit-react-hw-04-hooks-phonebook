@@ -19,6 +19,8 @@ const Form =({onDataForm})=>{
             case "comment" :
                 setComment(value)
                 break
+            default: 
+            return
         }
         
     }
