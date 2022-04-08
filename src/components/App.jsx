@@ -29,7 +29,7 @@ const App = ()=>{
     };
 
     if (contacts.find(contact => contact.tel.toLowerCase() === data.tel.toLowerCase())) {
-      alert(`${data.name} is already in contacts`);
+      alert(`${data.tel} is already in contacts`);
       return;
     };
 
